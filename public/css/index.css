@@ -51,3 +51,36 @@ body{
     border-radius:5px;
     cursor: pointer;
 }
+
+.add-section button:hover{
+    box-shadow: 0 2px 2px 0 #ccc, 0 2px 3px 0 #ccc;
+    opacity: 0.7;
+}
+
+.add-section button span{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+}
+
+#errorMes{
+    display: block;
+    background: #f2dede;
+    
+    width: 95%;
+    height: 35px;
+
+    margin: 0px auto;
+    padding: 10px;
+    color: rgb(139, 19, 19);
+}
+
+.show-todo-section{
+    width: 100%;
+    background: #fff;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
