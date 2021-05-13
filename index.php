@@ -16,9 +16,14 @@
         <div class="main-section">
         <!-- adicionando sessão -->
             <div class="add-section">
-                <form action="">
-                    <input type="text" name="title" id="title" placeholder="Este campo é requerido..">
-                    <button type="submit">Add &nbsp; <span>&#43;</span></button>
+                <form action="./src/add.php" method="POST" autocomplete="off">
+                    <?php if(isset($_GET['mess']) && $_GET['mess'] == 'error'){ ?>
+                        <input type="text" name="title" id="title" style="border-color: #ff6666;" placeholder="Este campo é requerido..">
+                        <button type="submit">Add &nbsp; <span>&#43;</span></button>
+                    <?php } else { ?>
+                        <input type="text" name="title" id="title" placeholder="O que você precisa fazer?">
+                        <button type="submit">Add &nbsp; <span>&#43;</span></button>
+                    <?php } ?>
                 </form>
             </div>
 
