@@ -28,21 +28,24 @@
               ?>
 
             <div class="show-todo-section">
-                <?php if ($todos->rowCount() > 0) { ?>
+                <?php if ($todos->rowCount() <= 0) { ?>
                         <div class="todo-item">
                             <input type="checkbox">
                             <div class="empty">>
                                 <img src="./public/img/f.png" width="100%" alt="f">
                                 <img src="./public/img/Ellipsis.gif" width="100%" alt="Ellipsis">
-                            </div
+                            </div>
                         </div>
-                    <?php } ?>
-
-                <div class="todo-item">
+                <?php } ?>
+                
+                <?php while($todo = $todos->fetch(PDO::FETCH_ASSOC)){  ?>
+                    <div class="todo-item">
+                        <span id="<?php $todo['id']; ?>" class="remove-to-do">x</span>
                         <input type="checkbox">
-                        <h2>Este é um todo list</h2><br>
-                        <small>created: 3/3/2021</small>
+                        <h2><?php echo($todo['title']);?></h2><br>
+                        <small><?php echo($todo['date_time']);?></small>
                     </div>
+                <?php } ?>
             </div>
         </div>
     </body>
