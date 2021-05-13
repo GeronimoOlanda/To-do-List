@@ -41,9 +41,17 @@
                 <?php while($todo = $todos->fetch(PDO::FETCH_ASSOC)){  ?>
                     <div class="todo-item">
                         <span id="<?php $todo['id']; ?>" class="remove-to-do">x</span>
+                        
+                        <?php if($todo['checked']){ ?>
+                            <input type="checkbox" class="check-box" checked />
+                            <h2 class="checked"><?php echo( $todo['title'] );?></h2>
+                        <?php } else { ?>
+
                         <input type="checkbox">
                         <h2><?php echo($todo['title']);?></h2><br>
-                        <small><?php echo($todo['date_time']);?></small>
+                        
+                        <?php } ?>
+                        <small>Adicionado em: <?php echo($todo['date_time']);?></small>
                     </div>
                 <?php } ?>
             </div>
